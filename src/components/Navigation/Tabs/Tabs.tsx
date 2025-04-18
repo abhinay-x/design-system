@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 
 interface Tab {
@@ -33,8 +32,8 @@ export const Tabs: React.FC<TabsProps> = ({ tabs, variant = 'underline' }) => {
   };
 
   return (
-    <div>
-      <div role="tablist" className="flex border-b border-[var(--neutral-200)] space-x-2">
+    <div className="md:block">
+      <div role="tablist" className="flex flex-col md:flex-row border-b border-[var(--neutral-200)] md:space-x-2 space-y-2 md:space-y-0">
         {tabs.map((tab, index) => (
           <button
             key={index}
@@ -43,10 +42,12 @@ export const Tabs: React.FC<TabsProps> = ({ tabs, variant = 'underline' }) => {
             aria-controls={`panel-${index}`}
             id={`tab-${index}`}
             disabled={tab.disabled}
-            className={`px-4 py-2 text-sm font-medium transition-colors duration-200 ${
+            className={`px-4 py-2 text-sm font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[var(--primary-300)] focus:ring-offset-1 ${
               activeTab === index
-                ? 'border-b-2 border-[var(--primary-500)] text-[var(--primary-500)]'
-                : 'text-[var(--neutral-800)] hover:text-[var(--primary-600)]'
+                ? 'border-b-2 border-[var(--primary-500)] text-[var(--primary-500)] hover:text-[var(--primary-600)]'
+                : tab.disabled
+                  ? 'text-[var(--neutral-400)] hover:text-[var(--neutral-400)]'
+                  : 'text-[var(--neutral-800)] hover:text-[var(--primary-600)]'
             } ${
               tab.disabled
                 ? 'opacity-50 cursor-not-allowed'

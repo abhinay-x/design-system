@@ -27,11 +27,12 @@ export const Badge: React.FC<BadgeProps> = ({
 
   return (
     <span
-      className={`inline-flex items-center rounded-full font-medium ${variantStyles[variant]} ${sizeStyles[size]} ${
-        disabled ? 'opacity-50 cursor-not-allowed' : ''
+      className={`inline-flex items-center rounded-full font-medium transition-all duration-200 ${variantStyles[variant]} ${sizeStyles[size]} ${
+        disabled ? 'opacity-50 cursor-not-allowed' : 'hover:scale-105 focus:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--primary-300)]'
       }`}
       role="status"
       aria-disabled={disabled}
+      tabIndex={disabled ? -1 : 0}
     >
       {label}
     </span>

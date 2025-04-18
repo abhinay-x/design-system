@@ -3,6 +3,20 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
+      animation: {
+        'tooltip-fade-in': 'tooltipFadeIn 0.2s ease-in forwards',
+        'fade-in': 'fadeIn 0.2s ease-in forwards',
+      },
+      keyframes: {
+        tooltipFadeIn: {
+          '0%': { opacity: '0', transform: 'scale(0.8)' },
+          '100%': { opacity: '1', transform: 'scale(1)' },
+        },
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+      },
       colors: {
         primary: {
           500: '#2563EB', //  primary color
