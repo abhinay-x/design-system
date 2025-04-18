@@ -59,44 +59,6 @@ Prerequisites
 Node.js (>=16.x)
 npm (>=8.x)
 
-Folder Structure
-
-design-system/
-├── src/
-│   ├── components/
-│   │   ├── DataDisplay/
-│   │   │   ├── Tooltip/
-│   │   │   │   ├── Tooltip.tsx
-│   │   │   │   └── index.ts
-│   │   │   └── Badge/
-│   │   │       ├── Badge.tsx
-│   │   │       └── index.ts
-│   │   ├── Navigation/
-│   │   │   └── Tabs/
-│   │   │       ├── Tabs.tsx
-│   │   │       └── index.ts
-│   │   └── Theme/
-│   │       ├── ThemeProvider.tsx
-│   │       └── index.ts
-│   ├── styles/
-│   │   └── theme.ts
-│   ├── App.tsx
-│   └── index.css
-├── stories/
-│   ├── ColorSystem.stories.tsx
-│   ├── Tooltip.stories.tsx
-│   ├── Tabs.stories.tsx
-│   └── Badge.stories.tsx
-├── docs/
-│   ├── tooltip-hover.gif
-│   ├── tabs-switching.gif
-│   ├── theme-toggle.gif
-│   └── badge-variants.png
-├── public/
-├── tailwind.config.js
-├── README.md
-├── package.json
-└── vite.config.ts
 
 
 
