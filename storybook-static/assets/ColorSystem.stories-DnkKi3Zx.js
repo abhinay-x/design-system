@@ -1,0 +1,7 @@
+import{j as s}from"./jsx-runtime-D_zvdyIk.js";const m={colors:{primary:{500:"#2563EB",600:"#1D4ED8"},secondary:{500:"#7C3AED",600:"#6D28D9"},neutral:{50:"#F9FAFB",200:"#E5E7EB",800:"#1F2937"},semantic:{success:"#10B981",error:"#EF4444",warning:"#F59E0B",info:"#3B82F6"}}},d=()=>s.jsx("div",{className:"space-y-8",children:Object.entries(m.colors).map(([o,n])=>s.jsxs("div",{children:[s.jsx("h2",{className:"text-xl font-semibold capitalize",children:o}),s.jsx("div",{className:"grid grid-cols-2 gap-4 mt-2",children:Object.entries(n).map(([r,t])=>s.jsx("div",{className:"p-4 rounded-md shadow",style:{backgroundColor:t},children:s.jsxs("p",{className:"text-sm font-medium",children:[r,": ",t]})},r))})]},o))}),p={title:"Design System/Color System",component:d,parameters:{docs:{description:{component:`
+          A token-based color system supporting light and dark modes.
+          - **Accessibility**: Meets WCAG 2.1 AA contrast ratios (verified with WebAIM).
+          - **Usage**: Use CSS variables (e.g., \`var(--primary-500)\`).
+          - **Do's**: Use semantic colors for feedback states.
+          - **Don'ts**: Avoid low-contrast combinations.
+        `}}}},e={};var a,c,i;e.parameters={...e.parameters,docs:{...(a=e.parameters)==null?void 0:a.docs,source:{originalSource:"{}",...(i=(c=e.parameters)==null?void 0:c.docs)==null?void 0:i.source}}};const x=["Default"];export{e as Default,x as __namedExportsOrder,p as default};
