@@ -1,10 +1,9 @@
-
 import React from 'react';
 
 interface BadgeProps {
   label: string;
   variant?: 'primary' | 'success' | 'error'|'warning';
-  size?: 'sm' | 'md';
+  size?: 'sm' | 'md' | 'large';
   disabled?: boolean;
 }
 
@@ -23,6 +22,7 @@ export const Badge: React.FC<BadgeProps> = ({
   const sizeStyles = {
     sm: 'px-2 py-1 text-xs',
     md: 'px-3 py-1 text-sm',
+    large: 'px-4 py-1.5 text-base',
   };
 
   return (

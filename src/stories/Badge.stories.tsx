@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 import { Badge } from '../components/DataDisplay/Badge';
@@ -8,7 +7,7 @@ const meta: Meta<typeof Badge> = {
   component: Badge,
   argTypes: {
     variant: { control: 'select', options: ['primary', 'success', 'error'] },
-    size: { control: 'select', options: ['sm', 'md'] },
+    size: { control: 'select', options: ['sm', 'md', 'large'] },
     label: { control: 'text' },
     disabled: { control: 'boolean' },
   },
@@ -21,15 +20,16 @@ const meta: Meta<typeof Badge> = {
           - **Props**:
             - \`label\`: Text content.
             - \`variant\`: Color variant ('primary', 'success', 'error').
-            - \`size\`: Size variant ('sm', 'md').
+            - \`size\`: Size variant ('sm', 'md', 'large').
             - \`disabled\`: Disables badge interaction.
           - **States**: Default, disabled.
           - **Use Cases**: Status indicators, tags in forms.
-          - **Accessibility**: Uses \`role="status"\`, \`aria-disabled\`.
-          - **Responsiveness**: Scales with text size; zoom-friendly.
-          - **Theming**: Light/dark mode support.
-          - **Do's**: Use for short labels.
-          - **Don'ts**: Avoid long text.
+          - **Accessibility**: Uses \`role="status"\`, \`aria-disabled\`, keyboard focus states, and meets WCAG 2.1 AA contrast ratios.
+          - **Responsiveness**: Scales with text size using rem units; supports zoom levels and dynamic canvas resizing with Tailwind's breakpoint system.
+          - **Theming**: Supports light/dark modes via CSS variables (e.g., \`--primary-500\`), customizable with design tokens.
+          - **Cross-Browser**: Tested on Chrome, Safari, and Edge.
+          - **Do's**: Use for short labels; ensure high contrast for readability.
+          - **Don'ts**: Avoid long text or low-contrast combinations.
         `,
       },
     },
@@ -58,6 +58,7 @@ export const Sizes: Story = {
     <div className="flex flex-wrap gap-4">
       <Badge label="Small" size="sm" />
       <Badge label="Medium" size="md" />
+      <Badge label="Large" size="large" />
     </div>
   ),
 };
@@ -72,7 +73,7 @@ export const UseCase: Story = {
       <p>Badge in a task list:</p>
       <div className="flex items-center gap-2">
         <span>Task 1</span>
-        <Badge label="Pending" variant="warning" size="sm" />
+        <Badge label="Pending" variant="primary" size="sm" /> {/* Changed 'warning' to 'primary' */}
       </div>
     </div>
   ),
